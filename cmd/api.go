@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/gofiber/fiber/v2"
 	"github.com/sachinsmc/ministry-of-programming-tasks/config"
 	"github.com/sachinsmc/ministry-of-programming-tasks/routes"
@@ -15,10 +13,8 @@ func Run() {
 
 	app := fiber.New()
 
-	fmt.Println("Server Port : ", viper.GetString("server.port"))
-
 	routes.Setup(app)
 
-	app.Listen(":3003")
+	app.Listen(":" + viper.GetString("server.port"))
 
 }

@@ -17,6 +17,8 @@ WORKDIR /app
 
 COPY --from=build /go/src/ministry-of-programming-tasks/app .
 
+COPY ./config/config.yml ./config/config.yml
+
 EXPOSE 3003
 
 CMD ["./app"]
