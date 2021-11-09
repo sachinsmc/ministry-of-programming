@@ -1,9 +1,39 @@
 version: "3.8"
 
-#services:
-#  mysql:
-#
-#  app:
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+#    env_file:
+#      - .env
+    environment:
+      MYSQL_USER: mopt
+      MYSQL_PASSWORD: 8x*LnnTU@RG%
+      MYSQL_ROOT_PASSWORD: 8x*LnnTU@RG%toor
+      MYSQL_DATABASE: mopt
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
 
-volumes:
-  db:
+    networks:
+      - go-mysql
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+
+#  app:
+#    depends_on:
+#      - mysql
+#    build: ./
+#    restart: unless-stopped
+#    stdin_open: true
+#    tty: true
+#    networks:
+#      - go-mysql
+#    expose:
+#      - 3003
+networks:
+  go-mysql:
+  
+# volumes:
+#   db:

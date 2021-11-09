@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/etag"
 	"github.com/gofiber/fiber/v2/middleware/logger"
@@ -13,7 +12,6 @@ import (
 
 func Setup(app *fiber.App) {
 
-	fmt.Println("config setup")
 	middlewares.CORS(app)
 
 	app.Get("/", monitor.New())

@@ -1,2 +1,9 @@
 server:
   port: 3003
+
+db:
+  host:
+  port:
+  name:
+  username:
+  password:

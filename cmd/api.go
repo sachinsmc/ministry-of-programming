@@ -3,6 +3,7 @@ package cmd
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/sachinsmc/ministry-of-programming-tasks/config"
+	"github.com/sachinsmc/ministry-of-programming-tasks/db"
 	"github.com/sachinsmc/ministry-of-programming-tasks/routes"
 	"github.com/spf13/viper"
 )
@@ -10,6 +11,8 @@ import (
 func Run() {
 
 	config.Init()
+
+	db.ConnectDB()
 
 	app := fiber.New()
 
